@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tangent Motion</title>
+  <meta name="description" content="Tangent Motion Inc. — biomechanics, trajectory optimization and scientific software development. Calgary, Alberta.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Tangent Motion">
+  <meta property="og:description" content="Biomechanics · Trajectory Optimization · Scientific Software">
+  <meta property="og:url" content="https://tangentmotion.ca/">
+  <style>
+    :root {
+      --ink: #1B2430;
+      --accent: #E4572E;
+      --curve: #2E86AB;
+      --muted: #6B7785;
+      --rule: #D9DEE4;
+      --panel: #F3F5F8;
+      --bg: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #E8ECF1;
+        --muted: #9AA5B1;
+        --rule: #2C3542;
+        --panel: #1F2732;
+        --bg: #151B23;
+        --curve: #5AAED0;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 0; }
+    .wordmark { display: flex; align-items: flex-end; gap: 14px; text-decoration: none; color: inherit; }
+    .wordmark svg { width: 52px; height: auto; flex: none; }
+    .wordmark .name { font-weight: 700; font-size: 22px; letter-spacing: 0.04em; line-height: 1; padding-bottom: 6px; }
+
+    .hero { padding: 88px 0 72px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin: 0 0 20px; letter-spacing: -0.01em; }
+    .hero h1 span { color: var(--curve); }
+    .hero p { font-size: 19px; color: var(--muted); max-width: 620px; margin: 0 0 32px; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 6px;
+      background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+    }
+    .btn:hover { filter: brightness(1.08); }
+
+    section { padding: 56px 0; border-top: 1px solid var(--rule); }
+    h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 24px; }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .card { background: var(--panel); border-radius: 8px; padding: 22px 22px 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+    .about p { max-width: 640px; margin: 0 0 12px; }
+    .contact a { color: var(--curve); font-weight: 600; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    footer { padding: 32px 0 48px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="wordmark" href="/" aria-label="Tangent Motion home">
+      <svg viewBox="-6 0 72 66" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M27 6H43M38 6V44A13 13 0 0 1 12 44" stroke="var(--curve)" stroke-width="6"/>
+        <path d="M-2 60H66" stroke="var(--accent)" stroke-width="2.4"/>
+        <circle cx="25" cy="60" r="3.4" fill="var(--accent)"/>
+      </svg>
+      <span class="name">TANGENT MOTION</span>
+    </a>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <h1>Biomechanics, trajectory optimization <span>&amp; scientific software.</span></h1>
+      <p>Tangent Motion helps research groups and companies model how bodies move, find optimal movements, and turn research code into reliable software.</p>
+      <a class="btn" href="mailto:jeremy@tangentmotion.ca">Get in touch</a>
+    </div>
+
+    <section>
+      <h2>Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Biomechanics</h3>
+          <p>Analysis and problem solving for human and animal movement: kinematics, inverse dynamics, and musculoskeletal modelling.</p>
+        </div>
+        <div class="card">
+          <h3>Trajectory optimization</h3>
+          <p>Optimal control and modelling of movement, from problem formulation to working solvers.</p>
+        </div>
+        <div class="card">
+          <h3>Scientific software</h3>
+          <p>Research-grade code made maintainable: MATLAB-to-Python conversion, packaging, testing, and version control.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>Tangent Motion Inc. is a Calgary-based consultancy led by Jeremy Wong, Director.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:jeremy@tangentmotion.ca">jeremy@tangentmotion.ca</a><br>Calgary, Alberta, Canada</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    &copy; <span id="y">2026</span> Tangent Motion Inc.
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
