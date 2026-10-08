@@ -37,10 +37,12 @@
       font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     }
     .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    body { border-top: 6px solid var(--accent); border-bottom: 6px solid var(--curve); min-height: 100vh; }
     header { padding: 40px 0 0; }
-    .wordmark { display: flex; align-items: flex-end; gap: 14px; text-decoration: none; color: inherit; }
-    .wordmark svg { width: 52px; height: auto; flex: none; }
-    .wordmark .name { font-weight: 700; font-size: 22px; letter-spacing: 0.04em; line-height: 1; padding-bottom: 6px; }
+    .wordmark { display: flex; align-items: center; gap: 18px; text-decoration: none; color: inherit; }
+    .wordmark svg { width: 60px; height: auto; flex: none; }
+    .wordmark .name { display: block; font-weight: 400; font-size: 28px; letter-spacing: 0.02em; line-height: 1.1; }
+    .wordmark .tagline { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
 
     .hero { padding: 88px 0 72px; }
     .hero h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin: 0 0 20px; letter-spacing: -0.01em; }
@@ -58,6 +60,20 @@
     .card { background: var(--panel); border-radius: 8px; padding: 22px 22px 18px; }
     .card h3 { margin: 0 0 8px; font-size: 18px; }
     .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+    .work { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .work figure { margin: 0; }
+    .work img, .work .placeholder {
+      display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+      border-radius: 8px; background: var(--panel);
+    }
+    .work .placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+      border: 1.5px dashed var(--rule); color: var(--muted); font-size: 13px;
+    }
+    .work .placeholder svg { width: 44px; opacity: 0.45; }
+    .work figcaption { padding-top: 12px; }
+    .work figcaption strong { display: block; font-size: 16px; }
+    .work figcaption span { color: var(--muted); font-size: 14.5px; }
     .about p { max-width: 640px; margin: 0 0 12px; }
     .contact a { color: var(--curve); font-weight: 600; text-decoration: none; }
     .contact a:hover { text-decoration: underline; }
@@ -68,12 +84,15 @@
 <body>
   <header class="wrap">
     <a class="wordmark" href="/" aria-label="Tangent Motion home">
-      <svg viewBox="-6 0 72 66" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M27 6H43M38 6V44A13 13 0 0 1 12 44" stroke="var(--curve)" stroke-width="6"/>
-        <path d="M-2 60H66" stroke="var(--accent)" stroke-width="2.4"/>
-        <circle cx="25" cy="60" r="3.4" fill="var(--accent)"/>
+      <svg viewBox="-4 -7 58 60" fill="none" stroke-linecap="round" aria-hidden="true">
+        <path d="M0 50C14 12 30 6 50 6" stroke="var(--curve)" stroke-width="3"/>
+        <path d="M-1.16 31.87L46.66 -4.37" stroke="var(--accent)" stroke-width="1.6"/>
+        <circle cx="22.75" cy="13.75" r="3.2" fill="var(--accent)"/>
       </svg>
-      <span class="name">TANGENT MOTION</span>
+      <span>
+        <span class="name">TANGENT MOTION</span>
+        <span class="tagline">Biomechanics &middot; Trajectory Optimization &middot; Scientific Software</span>
+      </span>
     </a>
   </header>
 
@@ -99,6 +118,26 @@
           <h3>Scientific software</h3>
           <p>Research-grade code made maintainable: MATLAB-to-Python conversion, packaging, testing, and version control.</p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected work</h2>
+      <!-- To add a figure: put the image in work/ and replace a placeholder div with
+           <img src="work/your-figure.png" alt="Describe the figure"> -->
+      <div class="work">
+        <figure>
+          <div class="placeholder"><svg viewBox="-4 -7 58 60" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M0 50C14 12 30 6 50 6" stroke="var(--curve)" stroke-width="3"/><path d="M-1.16 31.87L46.66 -4.37" stroke="var(--accent)" stroke-width="1.6"/><circle cx="22.75" cy="13.75" r="3.2" fill="var(--accent)"/></svg>Figure coming soon</div>
+          <figcaption><strong>Inverse dynamics</strong><span>Joint torques from motion capture and force data.</span></figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder"><svg viewBox="-4 -7 58 60" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M0 50C14 12 30 6 50 6" stroke="var(--curve)" stroke-width="3"/><path d="M-1.16 31.87L46.66 -4.37" stroke="var(--accent)" stroke-width="1.6"/><circle cx="22.75" cy="13.75" r="3.2" fill="var(--accent)"/></svg>Figure coming soon</div>
+          <figcaption><strong>Trajectory optimization</strong><span>Optimal movement trajectories from first principles.</span></figcaption>
+        </figure>
+        <figure>
+          <div class="placeholder"><svg viewBox="-4 -7 58 60" fill="none" stroke-linecap="round" aria-hidden="true"><path d="M0 50C14 12 30 6 50 6" stroke="var(--curve)" stroke-width="3"/><path d="M-1.16 31.87L46.66 -4.37" stroke="var(--accent)" stroke-width="1.6"/><circle cx="22.75" cy="13.75" r="3.2" fill="var(--accent)"/></svg>Figure coming soon</div>
+          <figcaption><strong>Research software</strong><span>MATLAB-to-Python conversion and maintainable analysis code.</span></figcaption>
+        </figure>
       </div>
     </section>
 
